@@ -18,8 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="16dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -27,6 +27,7 @@
 
                 <ImageView
                     android:id="@+id/btn_back"
+                    android:contentDescription="@string/image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -66,7 +67,7 @@
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/tv_year"
+                    android:id="@+id/tv_year_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/year"
@@ -75,127 +76,127 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_release_date"
+                    android:id="@+id/tv_release_date_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/release_date"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_year" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_year_is" />
 
                 <TextView
-                    android:id="@+id/tv_rating"
+                    android:id="@+id/tv_rating_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/rating"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_release_date" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_release_date_is" />
 
                 <TextView
-                    android:id="@+id/tv_runtime"
+                    android:id="@+id/tv_runtime_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/runtime"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_rating" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_rating_is" />
 
                 <TextView
-                    android:id="@+id/tv_genres"
+                    android:id="@+id/tv_genres_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/genres"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_runtime" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_runtime_is" />
 
                 <TextView
-                    android:id="@+id/tv_countries"
+                    android:id="@+id/tv_countries_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/countries"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_genres" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_genres_is" />
 
                 <TextView
-                    android:id="@+id/tv_language"
+                    android:id="@+id/tv_language_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/language"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_countries" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_countries_is" />
 
                 <TextView
-                    android:id="@+id/language"
+                    android:id="@+id/tv_language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toEndOf="@id/tv_language"
-                    app:layout_constraintTop_toTopOf="@id/tv_language"
+                    app:layout_constraintStart_toEndOf="@id/tv_language_is"
+                    app:layout_constraintTop_toTopOf="@id/tv_language_is"
                     tools:text="Textttttttt" />
 
                 <TextView
-                    android:id="@+id/countries"
+                    android:id="@+id/tv_countries"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/language"
-                    app:layout_constraintTop_toTopOf="@id/tv_countries"
+                    app:layout_constraintStart_toStartOf="@id/tv_language"
+                    app:layout_constraintTop_toTopOf="@id/tv_countries_is"
                     tools:text="Textttttttt" />
 
                 <TextView
-                    android:id="@+id/genres"
+                    android:id="@+id/tv_genres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/language"
-                    app:layout_constraintTop_toTopOf="@id/tv_genres"
+                    app:layout_constraintStart_toStartOf="@id/tv_language"
+                    app:layout_constraintTop_toTopOf="@id/tv_genres_is"
                     tools:text="Textttttttt" />
 
                 <TextView
-                    android:id="@+id/runtime"
+                    android:id="@+id/tv_runtime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/language"
-                    app:layout_constraintTop_toTopOf="@id/tv_runtime"
+                    app:layout_constraintStart_toStartOf="@id/tv_language"
+                    app:layout_constraintTop_toTopOf="@id/tv_runtime_is"
                     tools:text="Textttttttt" />
 
                 <TextView
-                    android:id="@+id/rating"
+                    android:id="@+id/tv_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/language"
-                    app:layout_constraintTop_toTopOf="@id/tv_rating"
+                    app:layout_constraintStart_toStartOf="@id/tv_language"
+                    app:layout_constraintTop_toTopOf="@id/tv_rating_is"
                     tools:text="Textttttttt" />
 
                 <TextView
-                    android:id="@+id/release"
+                    android:id="@+id/tv_release"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/language"
-                    app:layout_constraintTop_toTopOf="@id/tv_release_date"
+                    app:layout_constraintStart_toStartOf="@id/tv_language"
+                    app:layout_constraintTop_toTopOf="@id/tv_release_date_is"
                     tools:text="Textttttttt" />
 
                 <TextView
-                    android:id="@+id/year"
+                    android:id="@+id/tv_year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/language"
-                    app:layout_constraintTop_toTopOf="@id/tv_year"
+                    app:layout_constraintStart_toStartOf="@id/tv_language"
+                    app:layout_constraintTop_toTopOf="@id/tv_year_is"
                     tools:text="Textttttttt" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
