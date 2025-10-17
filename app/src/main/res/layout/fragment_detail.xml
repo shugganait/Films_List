@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".ui.fragments.detail.DetailFragment">
 
@@ -30,7 +30,7 @@
                     android:contentDescription="@string/image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:padding="8dp"
                     android:src="@drawable/back_ic"
                     app:layout_constraintStart_toStartOf="parent"
@@ -67,15 +67,6 @@
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/tv_year_is"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/year"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
                     android:id="@+id/tv_release_date_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -83,7 +74,7 @@
                     android:text="@string/release_date"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_year_is" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_rating_is"
@@ -141,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toEndOf="@id/tv_language_is"
+                    app:layout_constraintStart_toEndOf="@id/tv_runtime_is"
                     app:layout_constraintTop_toTopOf="@id/tv_language_is"
                     tools:text="Textttttttt" />
 
@@ -190,15 +181,6 @@
                     app:layout_constraintTop_toTopOf="@id/tv_release_date_is"
                     tools:text="Textttttttt" />
 
-                <TextView
-                    android:id="@+id/tv_year"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/tv_language"
-                    app:layout_constraintTop_toTopOf="@id/tv_year_is"
-                    tools:text="Textttttttt" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
@@ -206,6 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/image"
+                android:layout_marginTop="16dp"
                 android:paddingTop="16dp"
                 tools:src="@drawable/ic_launcher_foreground" />
 

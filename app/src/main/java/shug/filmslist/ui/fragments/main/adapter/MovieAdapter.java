@@ -1,24 +1,30 @@
 package shug.filmslist.ui.fragments.main.adapter;
 
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 import shug.filmslist.R;
-import shug.filmslist.remote.model.movieList.MovieResult;
+import shug.filmslist.remote.model.movie_list.MovieResult;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
     private List<MovieResult> dataList;
     private OnItemClickListener onItemClickListener;
+
     public interface OnItemClickListener {
-        void onItemClick(String id);
+        void onItemClick(Long id);
     }
 
     public MovieAdapter(List<MovieResult> dataList, OnItemClickListener onItemClickListener) {
@@ -33,15 +39,17 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         return new ViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MovieResult data = dataList.get(position);
         holder.tvTitle.setText(data.getTitle());
-        holder.tvYear.setText(data.getYear());
+        holder.tvYear.setText(data.getReleaseDate());
+        Glide.with(holder.image).load(("https://image.tmdb.org/t/p/w500" + data.getPosterPath())).into(holder.image);
 
         holder.itemView.setOnClickListener(view -> {
             if (onItemClickListener != null) {
-                onItemClickListener.onItemClick(data.getImdbId());
+                onItemClickListener.onItemClick(data.getid());
             }
         });
     }
@@ -54,11 +62,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvTitle;
         public TextView tvYear;
+        public ImageView image;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_title);
             tvYear = itemView.findViewById(R.id.tv_year);
+            image = itemView.findViewById(R.id.img_poster);
         }
     }
 }

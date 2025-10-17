@@ -2,52 +2,35 @@ package shug.filmslist.remote.service;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
-import shug.filmslist.remote.model.movieDetail.MovieDetail;
-import shug.filmslist.remote.model.movieDetail.MovieImage;
-import shug.filmslist.remote.model.movieList.MovieList;
+import shug.filmslist.remote.model.movie_detail.MovieDetail;
+import shug.filmslist.remote.model.movie_list.MovieList;
 
 public interface ApiService {
 
-    String KEY = "a14e8b61a6mshbd58074203c3097p1cb74fjsn88e622472eab";
+    String KEY = "958ffd81397873f1e8ac45610cf22299";
 
-    @GET("/")
-    @Headers({
-            "X-RapidAPI-Key: " + KEY,
-            "X-RapidAPI-Host: movies-tv-shows-database.p.rapidapi.com",
-            "Type: get-upcoming-movies"
-    })
-    Call<MovieList> getMovies(
-            @Query("page") String page
+    @GET("movie/popular")
+    Call<MovieList> getPopularMovies(
+            @Query("api_key") String apiKey,
+            @Query("language") String language,
+            @Query("page") int page
     );
 
-    @GET("/")
-    @Headers({
-            "X-RapidAPI-Key: " + KEY,
-            "X-RapidAPI-Host: movies-tv-shows-database.p.rapidapi.com",
-            "Type: get-movies-by-title"
-    })
-    Call<MovieList> getMoviesByTitle(
-            @Query("title") String title
+    @GET("search/movie")
+    Call<MovieList> searchMovies(
+            @Query("api_key") String apiKey,
+            @Query("language") String language,
+            @Query("query") String query,
+            @Query("page") int page
     );
 
-    @GET("/")
-    @Headers({
-            "X-RapidAPI-Key: " + KEY,
-            "X-RapidAPI-Host: movies-tv-shows-database.p.rapidapi.com",
-            "Type: get-movie-details"
-    })
-    Call<MovieDetail> getMovieById(
-            @Query("movieid") String id
-    );
-    @GET("/")
-    @Headers({
-            "X-RapidAPI-Key: " + KEY,
-            "X-RapidAPI-Host: movies-tv-shows-database.p.rapidapi.com",
-            "Type: get-movies-images-by-imdb"
-    })
-    Call<MovieImage> getMovieImageById(
-            @Query("movieid") String id
+
+    @GET("movie/{movie_id}")
+    Call<MovieDetail> getMovieDetails(
+            @Path("movie_id") int movieId,
+            @Query("api_key") String apiKey,
+            @Query("language") String language
     );
 }
