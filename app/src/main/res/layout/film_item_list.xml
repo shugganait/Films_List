@@ -33,7 +33,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tv_year"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_rate"
             app:layout_constraintStart_toEndOf="@id/img_poster"
             app:layout_constraintTop_toTopOf="@id/img_poster"
             tools:text="title\nfesfesefeesfs\ngrgefs" />
@@ -46,8 +46,24 @@
             android:layout_marginBottom="6dp"
             android:textSize="14sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/img_poster"
             app:layout_constraintStart_toEndOf="@id/img_poster"
             tools:text="Year" />
+
+        <TextView
+            android:id="@+id/tv_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="6dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            tools:text="6.2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

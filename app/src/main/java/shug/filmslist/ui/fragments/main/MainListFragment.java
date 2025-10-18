@@ -41,12 +41,10 @@ public class MainListFragment extends Fragment {
     private MovieAdapter adapter;
     private ArrayList<MovieResult> movies = new ArrayList<>();
 
-    // 🔹 Параметры пагинации
     private int currentPage = 1;
     private boolean isLoading = false;
     private boolean isLastPage = false;
 
-    // 🔹 Поисковая строка (если пуста — показываем популярные)
     private String currentQuery = "";
 
     @Override
@@ -65,7 +63,6 @@ public class MainListFragment extends Fragment {
         initRecyclerView();
         initListener();
 
-        // 🔹 Восстанавливаем состояние
         movies.clear();
         if (currentQuery.isEmpty()) {
             fetchMovies(currentPage);
@@ -74,10 +71,6 @@ public class MainListFragment extends Fragment {
         }
     }
 
-
-    // ---------------------------------------------------
-    // 🔹 Инициализация RecyclerView + пагинация
-    // ---------------------------------------------------
     private void initRecyclerView() {
         adapter = new MovieAdapter(movies, id -> {
             Bundle bundle = new Bundle();
@@ -109,9 +102,6 @@ public class MainListFragment extends Fragment {
         });
     }
 
-    // ---------------------------------------------------
-    // 🔹 Слушатели для поиска
-    // ---------------------------------------------------
     private void initListener() {
         binding.etSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -150,9 +140,6 @@ public class MainListFragment extends Fragment {
         });
     }
 
-    // ---------------------------------------------------
-    // 🔹 Запрос популярных фильмов
-    // ---------------------------------------------------
     private void fetchMovies(int page) {
         isLoading = true;
         Call<MovieList> call = apiService.getPopularMovies(ApiService.KEY, "ru-RU", page);
@@ -182,9 +169,6 @@ public class MainListFragment extends Fragment {
         });
     }
 
-    // ---------------------------------------------------
-    // 🔹 Запрос фильмов по названию
-    // ---------------------------------------------------
     private void fetchMoviesByTitle(String title, int page) {
         isLoading = true;
         Call<MovieList> call = apiService.searchMovies(ApiService.KEY, "ru-RU", title, page);
@@ -216,9 +200,6 @@ public class MainListFragment extends Fragment {
         });
     }
 
-    // ---------------------------------------------------
-    // 🔹 Загрузка следующей страницы
-    // ---------------------------------------------------
     private void loadNextPage() {
         currentPage++;
         if (currentQuery.isEmpty()) {
@@ -228,9 +209,6 @@ public class MainListFragment extends Fragment {
         }
     }
 
-    // ---------------------------------------------------
-    // 🔹 Сброс пагинации при новом поиске
-    // ---------------------------------------------------
     private void resetPagination() {
         movies.clear();
         adapter.notifyDataSetChanged();

@@ -17,6 +17,7 @@ public class MovieResult {
     @SerializedName("release_date")
     private String releaseDate;
     private double popularity;
+    @SerializedName("vote_average")
     private double voteAverage;
     private long id;
     private boolean adult;

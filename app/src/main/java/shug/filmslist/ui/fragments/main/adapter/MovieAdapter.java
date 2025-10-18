@@ -45,6 +45,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         MovieResult data = dataList.get(position);
         holder.tvTitle.setText(data.getTitle());
         holder.tvYear.setText(data.getReleaseDate());
+        holder.tvRate.setText(String.valueOf(data.getVoteAverage()));
+
         Glide.with(holder.image).load(("https://image.tmdb.org/t/p/w500" + data.getPosterPath())).into(holder.image);
 
         holder.itemView.setOnClickListener(view -> {
@@ -62,12 +64,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvTitle;
         public TextView tvYear;
+        public TextView tvRate;
         public ImageView image;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_title);
             tvYear = itemView.findViewById(R.id.tv_year);
+            tvRate = itemView.findViewById(R.id.tv_rate);
             image = itemView.findViewById(R.id.img_poster);
         }
     }

@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        // Регистрируем callback
         if (connectivityManager != null) {
             connectivityManager.registerDefaultNetworkCallback(networkCallback);
         }

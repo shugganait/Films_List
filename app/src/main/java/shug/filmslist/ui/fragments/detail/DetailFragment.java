@@ -1,6 +1,8 @@
 package shug.filmslist.ui.fragments.detail;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,6 +56,14 @@ public class DetailFragment extends Fragment {
         }
 
         binding.btnBack.setOnClickListener(v -> navController.navigateUp());
+
+        binding.btnOpen.setOnClickListener(v -> {
+            String encodedName = Uri.encode(binding.tvTitle.getText().toString());
+            // Формируем ссылку на поиск по названию на Кинопоиске
+            String url = "https://www.kinopoisk.ru/index.php?kp_query=" + encodedName;
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        });
     }
 
     private void fetchMovieDetail(int movieId) {
