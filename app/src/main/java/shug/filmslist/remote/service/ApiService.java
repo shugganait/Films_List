@@ -4,6 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import shug.filmslist.remote.model.genres.GenreList;
 import shug.filmslist.remote.model.movie_detail.MovieDetail;
 import shug.filmslist.remote.model.movie_list.MovieList;
 
@@ -26,10 +27,28 @@ public interface ApiService {
             @Query("page") int page
     );
 
+    // Discover — для фильтров (genres + year range)
+    @GET("discover/movie")
+    Call<MovieList> discoverMovies(
+            @Query("api_key") String apiKey,
+            @Query("language") String language,
+            @Query("page") int page,
+            @Query("with_genres") String genres,
+            @Query("primary_release_date.gte") String releaseDateFrom,
+            @Query("primary_release_date.lte") String releaseDateTo,
+            @Query("sort_by") String sortBy
+    );
 
     @GET("movie/{movie_id}")
     Call<MovieDetail> getMovieDetails(
             @Path("movie_id") int movieId,
+            @Query("api_key") String apiKey,
+            @Query("language") String language
+    );
+
+    // Получить список жанров
+    @GET("genre/movie/list")
+    Call<GenreList> getGenres(
             @Query("api_key") String apiKey,
             @Query("language") String language
     );

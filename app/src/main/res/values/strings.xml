@@ -14,4 +14,8 @@
     <string name="enter_name">Введите название фильма</string>
     <string name="n">Нет соединения с интернетом.\nПожалуйста, проверьте подключение.</string>
     <string name="open">Открыть в браузере</string>
+    <string name="clear">Очистить фильтр</string>
+    <string name="срусл">Применить фильтр</string>
+    <string name="enter_year">Enter Year</string>
+    <string name="enter_yea">Выберите год</string>
 </resources>

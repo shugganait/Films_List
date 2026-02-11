@@ -84,7 +84,7 @@
                     android:text="@string/rating"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_release_date_is" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_release" />
 
                 <TextView
                     android:id="@+id/tv_runtime_is"
@@ -94,7 +94,7 @@
                     android:text="@string/runtime"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_rating_is" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_rating" />
 
                 <TextView
                     android:id="@+id/tv_genres_is"
@@ -104,7 +104,7 @@
                     android:text="@string/genres"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_runtime_is" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_runtime" />
 
                 <TextView
                     android:id="@+id/tv_countries_is"
@@ -114,7 +114,7 @@
                     android:text="@string/countries"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_genres_is" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_genres" />
 
                 <TextView
                     android:id="@+id/tv_language_is"
@@ -124,7 +124,7 @@
                     android:text="@string/language"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_countries_is" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_countries" />
 
                 <TextView
                     android:id="@+id/tv_language"
